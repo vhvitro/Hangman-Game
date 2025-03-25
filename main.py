@@ -56,8 +56,10 @@ def main():
     print("\n\n")
     
     if '_' not in word_now:
-        if tries!=0:
-            print(f'Parabens! Voce chegou na resposta com {tries} erros!')
+        if tries==1:
+            print(f'Parabens! Voce chegou na resposta errando {tries} vez!')
+        elif tries>1:
+            print(f'Parabens! Voce chegou na resposta errando {tries} vezes!')
         else:
             print(f'Parabens! Voce chegou na resposta sem errar uma sequer!')
     else:
