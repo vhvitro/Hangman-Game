@@ -11,6 +11,7 @@ def main():
     valid_state = False
     
     while not valid_state:
+        """Error treatment for the user input"""
         print("Vai querer a dica do contexto da palavra?\n Digite S para sim ou N para nao")
         context_input = str(input())
         if context_input=="S" or context_input=="s":
@@ -30,12 +31,15 @@ def main():
         for i in range(len(word_now)):
             print(word_now[i], end='')
         print("\n\n")
+        
         if context_bool:
+            """Decides if the program will print the context in which the word is inserted corresponding to the user's choice"""
             print(f"O contexto em que a palavra esta inserida e: {context}, e voce ainda tem {len(STATES)-tries-1} chances para acertar\n")
         else:
             print(f"Voce ainda tem {len(STATES)-tries-1} chances para acertar\n")
 
         while already_tried:
+            """Error treatment for the user's guess, checking if it is a letter and if it wasn't already tried"""
             guess = str(input("E entao... qual seu chute?  \n")).upper()
             if not guess.isalpha():
                 print("Insira um caractere valido, por favor!")
@@ -45,7 +49,9 @@ def main():
                 else:
                     guessed.append(guess)
                     already_tried = False
+                    
         for i in range(len(word_to_guess)):
+            """Checking for each letter in the answer if it corresponds to the user's guess, updating the already guessed word's state"""
             if guess == word_to_guess[i]:
                 word_now[i] = guess
                 correct_answer = True
@@ -54,7 +60,8 @@ def main():
             print(f"\nPoxa, a letra '{guess}' nao estava la...\n")
         else:
             print(f"\nBoa, realmente a letra '{guess}' estava la!\n")
-            
+    
+    """Printing the final state the user have achieved"""        
     current_state = STATES[tries]
     print(current_state)
     print("      ", end='')
