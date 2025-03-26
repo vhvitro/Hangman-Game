@@ -8,11 +8,18 @@ def main():
     context_bool = False
     guessed = []
     word_now = create_word_sep(word_to_guess)
+    valid_state = False
     
-    print("Vai querer a dica do contexto da palavra?\n Digite S para sim ou N para nao")
-    context_input = str(input())
-    if context_input=="S" or context_input=="s":
-        context_bool = True
+    while not valid_state:
+        print("Vai querer a dica do contexto da palavra?\n Digite S para sim ou N para nao")
+        context_input = str(input())
+        if context_input=="S" or context_input=="s":
+            context_bool = True
+            valid_state = True
+        elif context_input=="N" or context_input=="n":
+            valid_state = True
+        else:
+            print("Digite um caractere valido, por favor!\n")
             
     while tries<len(STATES)-1 and '_' in word_now:
         current_state = STATES[tries]
