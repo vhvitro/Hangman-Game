@@ -6,6 +6,10 @@ The game itself is very simple, it runs on terminal and it'll use a 'library' of
 
 >A complete dictionary with words that cover all difficulties: from easy to hard;
 
+>Menu selection ate the start of the game
+
+>Player's statistics saver 
+
 >Error treatment for every player's input;
 
 >The player might choose if they want the tip describing the context of the word they'll try to guess or not.
