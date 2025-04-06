@@ -6,9 +6,9 @@ The game itself is very simple, it runs on terminal and it'll use a 'library' of
 
 >A complete dictionary with words that cover all difficulties: from easy to hard;
 
->Menu selection as the game starts
+>Menu selection as the game starts;
 
->Player's statistics saver 
+>Player's statistics saver;
 
 >Error treatment for every player's input;
 
